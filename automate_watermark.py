@@ -12,7 +12,7 @@ class WatermarkAutomation:
 
         self.watermark = Image.open('watermark.png')
         self.watermark_width = self.watermark.width
-        self.watermark_heigth = self.watermark.height
+        self.watermark_height = self.watermark.height
 
     def run(self):
         pictures = self.get_files_from_in_directory()
@@ -37,7 +37,7 @@ class WatermarkAutomation:
         image_width = image.width
         image_height = image.height
         image.paste(self.watermark,
-                    (int((image_width - self.watermark_width) / 2), int((image_height - self.watermark_heigth) / 2)),
+                    (int((image_width - self.watermark_width) / 2), int((image_height - self.watermark_height) / 2)),
                     self.watermark)
         image.save(f'{self.out_directory}/marked_{image_name}')
 
